@@ -1,0 +1,12 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main()
+{
+	char pass[101];
+	cout<<"Introdu parola: ";
+	cipass;	if(pass == 'buna')
+		cout<<"Bine ai venit";
+	else
+		cout<<"Ai gresit parola";
+}

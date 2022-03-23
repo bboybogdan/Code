@@ -1,0 +1,7 @@
+sub test cu parametrul n n<=20 si vectorul v cu max n elemente
+a. returneaza max din vector
+b. afiseaza toate elemtele de pe pozittia impare
+c. furnizeaza paramentul s suma el p. perfecte
+
+*) sa se sterga primul element para
+sa se sterga toate elementele pare 

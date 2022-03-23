@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Getting server updates</h1>
+    <div id="results"></div>
+
+    <script>
+        if (typeof (EventSource) !== "undefined") {
+            var source = new EventSource("demo_sse.php");
+            source.onmessage = function (event) {
+                document.getElementById("results").innerHTML += event.data + "<br>";
+            };
+        } else {
+            document.getElementById("results").innerHTML = "Sorry";
+        }
+    </script>
+
+</body>
+
+</html>

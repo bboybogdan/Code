@@ -1,0 +1,2 @@
+g++ NAME -o outputtest.exe
+./outputtest.exe

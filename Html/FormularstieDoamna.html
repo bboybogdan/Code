@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang=eu>
+    <head>
+        <title>Formular pentru doamna Diriginta</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        div.a {
+            text-align: center;
+        }
+        
+        #div1,
+        #div2 {
+            float: left;
+            width: 100px;
+            height: 35px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        </style>
+            <script>
+                function allowDrop(ev) {
+                    ev.preventDefault();
+                }
+                function drag(ev) {
+                    ev.dataTransfer.setData("text", ev.target.id);
+                }
+                function drop(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData("text");
+                    ev.target.appendChild(document.getElementById(data));
+                }
+            </script>
+    </head>
+    <body>
+        <div class: "a">
+        <h1>Formular Domana Diriginta</h1>
+        <h4>Prima intrebare:</h4>
+        <p>Numele dumneavoastra:</p>
+        <from action="/action_page.php">
+            <textarea name="message" rows="1" cols="10"></textarea>
+            <br><br>
+        </from>
+        <a href="#C2">
+            Sari la intrebarea numarul 2
+          </a>
+        <br><br>
+        <h4 id="C2">A doua intrebare:</h4>
+        <p>Sexul</p>
+        <form>
+            <input type="radio" id="barbat" name="gender" value="barbat">
+            <label for="barbat">Barbat</label><br>
+            <input type="radio" id="femeie" name="gender" value="femeie">
+            <label for="femeie">Femeie</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Nu vreau sa raspund la aceasta intrebare</label>
+        </form>
+        <br><br>
+        <a href="#C3">
+            Sari la intrebarea numarul 3
+          </a>
+        <br><br>
+        <h4 id="C3">A treia intrebare:</h4>
+        <p>Va credeti o persoana fericita?</p>
+        <form>
+            <input type="radio" id="da" name="raspuns" value="da">
+            <label for="da">Da</label><br>
+            <input type="radio" id="nu" name="raspuns" value="nu">
+            <label for="nu">Nu</label><br>
+            <input type="radio" id="other" name="raspuns" value="other">
+            <label for="other">Mereu</label><br>
+            <input type="radio" id="niciodata" name="raspuns" value="niciodata">
+            <label for="niciodata">Niciodata</label><br>
+        </form>
+        <br><br>
+        <a href="#C4">
+            Sari la intrebarea numarul 4
+          </a>
+        <br><br>
+        <h4 id="C4">A patra intrebare:</h4>
+        <p>Care este varsta dumneavoastra?</p>
+        <form>
+            <input type="radio" id="14-20" name="varsta" value="14-20">
+            <label for="14-20">14-20</label><br>
+            <input type="radio" id="21-30" name="varsta" value="21-30">
+            <label for="21-30">21-30</label><br>
+            <input type="radio" id="31-40" name="varsta" value="31-40">
+            <label for="31-40">31-40</label><br>
+            <input type="radio" id="41-50" name="varsta" value="41-50">
+            <label for="41-50">41-50</label><br>
+            <input type="radio" id="51-60" name="varsta" value="51-60">
+            <label for="51-60">51-60</label><br>
+        </form>
+        <br><br>
+        <a href="#C5">
+            Sari la intrebarea numarul 5
+          </a>
+        <br><br>
+        <h4 id="C5">A cincea intrebare:</h4>
+        <p>Care este distractia dumneavoastra preferata?</p>
+        <form action="/action_page.php">
+            <input type="checkbox" id="Cu prietenii" name="Cu prietenii" value="Cu prietenii">
+            <label for="Cu prietenii">Cu prietenii</label><br>
+            <input type="checkbox" id="Fac sport" name="Fac sport" value="Fac sport">
+            <label for="Fac sport">Fac sport</label><br>
+            <input type="checkbox" id="dansez" name="dansez" value="dansez">
+            <label for="dansez">Dansul</label><br>
+            <input type="checkbox" id="somnul" name="somnul" value="somnul">
+            <label for="somnul">Somnul</label><br>
+            <input type="checkbox" id="calatoresc" name="calatoresc" value="calatoresc">
+            <label for="calatoresc">Calatoresc</label><br>
+            <input type="checkbox" id="ski" name="ski" value="ski">
+            <label for="ski">Ski</label><br>
+        </form> 
+        <br><br>
+        <p>Daca va place pana acum formularul mutati imaginea dintr-o partea in alta(*puteti muta poza dintr-o parte in cealalta):</p>
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="test3.gif" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+        </div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br><br>
+        <br><br><br><br>
+        <p>Atasati o poza cu dumneavoastra</p>
+        <form action="/action_page.php">
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile"><br><br>
+        </form>
+        <br><br>
+        <p>Daca va placut acest formular aprindeti becul:</p>
+        <script>
+            function light(sw) {
+              var pic;
+              if (sw == 0) {
+                pic = "pic_bulboff.gif"
+              } else {
+                pic = "pic_bulbon.gif"
+              }
+              document.getElementById('myImage').src = pic;
+            }
+            </script>
+            
+            <img id="myImage" src="pic_bulboff.gif" width="100" height="180">
+            
+            <p>
+            <button type="button" onclick="light(1)">Light On</button>
+            <button type="button" onclick="light(0)">Light Off</button>
+            </p>
+        </div>
+    </body>
+</html>
